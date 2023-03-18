@@ -27,4 +27,5 @@ public class CreateOrders {
     private String receiver_number;
     private String order_id;
     private String estimated_size;
+    private String order_status;
 }
