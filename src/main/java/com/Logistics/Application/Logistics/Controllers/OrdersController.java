@@ -55,4 +55,10 @@ public class OrdersController {
             return new ResponseEntity<>(orderService.getAll(useremail), OK);
         }
     }
+
+    @GetMapping("/all-orders")
+    public ResponseEntity<?> GetAllOrders() {
+        return new ResponseEntity<>(orderService.getOrders(), OK);
+    }
+
 }

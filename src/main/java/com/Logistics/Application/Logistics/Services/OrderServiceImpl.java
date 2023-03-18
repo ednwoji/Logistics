@@ -21,6 +21,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<CreateOrders> getAll(String useremail) {
-        return orderRepository.findBySender_email(useremail);
+        return orderRepository.findBySenderEmail(useremail);
+    }
+
+    @Override
+    public List<CreateOrders> getOrders() {
+        return orderRepository.findAll();
     }
 }

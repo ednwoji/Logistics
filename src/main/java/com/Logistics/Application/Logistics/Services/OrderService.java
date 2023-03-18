@@ -8,4 +8,6 @@ public interface OrderService {
     Object saveOrder(CreateOrders createOrders);
 
     List<CreateOrders> getAll(String useremail);
+
+    List<CreateOrders> getOrders();
 }

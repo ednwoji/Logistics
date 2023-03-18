@@ -20,7 +20,7 @@ public class CreateOrders {
     private String pickup_location;
     private String destination;
     private String sender_name;
-    private String sender_email;
+    private String senderEmail;
     private String sender_number;
     private String receiver_name;
     private String receiver_email;
