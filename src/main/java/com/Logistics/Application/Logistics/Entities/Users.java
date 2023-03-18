@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "logistics_users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -14,9 +15,8 @@ public class Users {
 
     @Column(name = "id")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id;
-
     private String user_name;
     private String user_password;
     private String role;
