@@ -1,4 +1,4 @@
-package com.Logistics.Applicaton.Logistics;
+package com.Logistics.Application.Logistics;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

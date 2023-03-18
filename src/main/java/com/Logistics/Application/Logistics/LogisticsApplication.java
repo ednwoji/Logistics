@@ -1,4 +1,4 @@
-package com.Logistics.Applicaton.Logistics;
+package com.Logistics.Application.Logistics;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
