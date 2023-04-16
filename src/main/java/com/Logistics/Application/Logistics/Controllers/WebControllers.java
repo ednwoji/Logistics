@@ -13,4 +13,11 @@ public class WebControllers {
 
         return "index";
     }
+
+    @GetMapping("/started")
+    public String Signup() {
+
+        return "signup";
+    }
+
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -76,7 +76,7 @@
 <!--            </ul>-->
 <!--          </li>-->
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Signup to Get Started</a></li>
+          <li><a class="get-a-quote" th:href="@{/started}">Signup to Get Started</a></li>
         </ul>
       </nav><!-- .navbar -->
 

@@ -51,7 +51,7 @@ public class AuthController {
             userResponses.setUser_password("Null");
             userResponses.setStatus("Wrong Email");
 
-            ResponseEntity.ok(userResponses);
+            ResponseEntity.badRequest().body(userResponses);
         }
         else {
             if (!BCrypt.checkpw(users.getUser_password(), userCheck.getUser_password())) {
@@ -59,7 +59,7 @@ public class AuthController {
                 userResponses.setUser_name(userCheck.getUser_name());
                 userResponses.setUser_password("Null");
                 userResponses.setStatus("Wrong Password");
-                return ResponseEntity.ok(userResponses);
+                ResponseEntity.badRequest().body(userResponses);
             }
 
             else {

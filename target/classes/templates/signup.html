@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>[Template] Sample Inner Page</title>
+  <title>Signup</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +26,16 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="/assets/css/signup.css" rel="stylesheet">
+
+
 
   <!-- =======================================================
   * Template Name: Logis
@@ -44,7 +52,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a th:href="@{/home}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Logis</h1>
@@ -58,25 +66,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Get a Quote</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -92,27 +82,63 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Sample Inner Page</h2>
-              <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h2>Chief! Let's get you started!</h2>
+              <p>Scroll down to get started with us</p>
             </div>
           </div>
         </div>
       </div>
-      <nav>
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Sample Inner Page</li>
-          </ol>
-        </div>
-      </nav>
     </div><!-- End Breadcrumbs -->
 
     <section class="sample-page">
       <div class="container" data-aos="fade-up">
-        <p>
-          You can duplicate this sample page and create any number of inner pages you like!
-        </p>
+
+          <div class="frame">
+            <div class="nav">
+              <ul class="links">
+                <li class="signin-active"><a class="btn">Existing User</a></li>
+                <li class="signup-inactive"><a class="btn">New User</a></li>
+              </ul>
+            </div>
+            <div ng-app ng-init="checked = false">
+              <form class="form-signin" action="" method="post" name="form">
+                <label for="logemail">Email Address</label>
+                <input class="form-styling" id="logemail" type="email" name="email" placeholder="Enter Email" />
+                <label for="logpassword">Password</label>
+                <input class="form-styling" id="logpassword" type="text" name="password" placeholder="Enter Password" />
+<!--                <input type="checkbox" id="checkbox" />-->
+<!--                <label for="checkbox"><span class="ui"></span>Keep me signed in</label>-->
+                <div class="btn-animate"> <a class="btn-signin" id="btn-signin">Login to your account</a> </div>
+              </form>
+              <form class="form-signup" id="form-signup" action="" method="post" name="form">
+                <label for="username">Full Name</label>
+                <input class="form-styling" type="text" id="username" name="email" placeholder="Surname first" />
+                <label for="email">Email</label>
+                <input class="form-styling" type="email" id="email" name="email" placeholder="Enter active email" />
+                <label for="mobile">Enter Mobile number</label>
+                <input class="form-styling" type="phone" id = "mobile" name="mobile" placeholder="Enter mobile number" />
+
+                <label for="address">Enter Address</label>
+                <input class="form-styling" type="phone" id = "address" name="address" placeholder="Enter Address" />
+                <label for="password">Create password</label>
+                <input class="form-styling" id="password" type="password" name="password" placeholder="Enter Password" />
+
+                <div id="success-text" class="success-text" style="display: none;">
+                  <p>User registered, Kindly check your email for confirmation.</p>
+                </div>
+
+
+                <a ng-click="checked = !checked" id="btn-signup" class="btn-signup">REGISTER</a>
+
+
+              </form>
+
+            </div>
+            <div class="forgot"> <a href="#">Forgot your password?</a> </div>
+          </div>
+
+
+
       </div>
     </section>
 
@@ -150,22 +176,22 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Logistics</a></li>
+            <li><a href="#">Packaging</a></li>
+            <li><a href="#">Truck</a></li>
+            <li><a href="#">Clearing and Forwarding</a></li>
+            <li><a href="#">Home Deliveries</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            Area 6, Road 602 <br>
+            New Haven Estate, Iba<br>
+            Lagos, Nigeria <br><br>
+            <strong>Phone:</strong> +2349034428925<br>
+            <strong>Email:</strong> info@logistikx.com<br>
           </p>
 
         </div>
@@ -175,14 +201,14 @@
 
     <div class="container mt-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Logis</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Logistics</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">Dave Nwoji</a>
       </div>
     </div>
 
@@ -202,7 +228,9 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/signup.js"></script>
+
 
 </body>
 
